@@ -1,0 +1,59 @@
+version: '3.9'
+services:
+  minio:
+    image: minio/minio
+    container_name: minio_server
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: forensic123
+    command: server /data --console-address ":9090"
+    volumes:
+      - ./evidence:/data
+    networks:
+      - forensic_net
+
+  client:
+    image: ubuntu:22.04
+    container_name: cloud_client
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./scripts:/scripts
+      - ./evidence:/evidence
+      - ./logs:/logs
+    networks:
+      - forensic_net
+    command: /bin/bash
+
+  backup:
+    image: ubuntu:22.04
+    container_name: backup_service
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./evidence:/evidence
+      - ./backups:/backups
+      - ./scripts:/scripts
+    command: /bin/bash -c "chmod +x /scripts/backup.sh && /scripts/backup.sh"
+    networks:
+      - forensic_net
+
+  investigator:
+    image: ubuntu:22.04
+    container_name: forensic_investigator
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./evidence:/evidence
+      - ./backups:/backups
+      - ./logs:/logs
+      - ./scripts:/scripts
+    networks:
+      - forensic_net
+    command: /bin/bash
+
+networks:
+  forensic_net:
