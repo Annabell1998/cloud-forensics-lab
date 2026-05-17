@@ -6,3 +6,15 @@ Sat May 16 19:39:04 UTC 2026 - USER uploaded report_5.txt
 Sat May 16 19:41:02 UTC 2026 - MALICIOUS USER deleted report_3.txt
 Sat May 16 19:41:02 UTC 2026 - MALICIOUS USER deleted report_4.txt
 Sat May 16 19:41:04 UTC 2026 - Command history cleared
+2026-05-17T20:30:03+00:00 - LOGIN - user=admin ip=192.168.1.10 file=/evidence/case001.txt status=success
+2026-05-17T20:30:04+00:00 - UPLOAD - user=admin ip=192.168.1.10 file=/evidence/case001.txt status=success
+2026-05-17T20:30:05+00:00 - FAILED_LOGIN - user=user_unknown ip=45.83.10.9 file=/evidence/ status=failed
+2026-05-17T20:30:06+00:00 - MASS_DOWNLOAD - user=user_unknown ip=45.83.10.9 file=/evidence/document_1.pdf status=success
+2026-05-17T20:30:07+00:00 - MASS_DOWNLOAD - user=user_unknown ip=45.83.10.9 file=/evidence/document_2.pdf status=success
+2026-05-17T20:30:08+00:00 - MASS_DOWNLOAD - user=user_unknown ip=45.83.10.9 file=/evidence/document_3.pdf status=success
+2026-05-17T20:30:09+00:00 - MASS_DOWNLOAD - user=user_unknown ip=45.83.10.9 file=/evidence/document_4.pdf status=success
+2026-05-17T20:30:10+00:00 - MASS_DOWNLOAD - user=user_unknown ip=45.83.10.9 file=/evidence/document_5.pdf status=success
+2026-05-17T20:30:11+00:00 - DELETE - user=user_unknown ip=45.83.10.9 file=/evidence/document_1.pdf status=success
+2026-05-17T20:30:12+00:00 - DELETE - user=user_unknown ip=45.83.10.9 file=/evidence/document_2.pdf status=success
+2026-05-17T20:30:13+00:00 - DELETE - user=user_unknown ip=45.83.10.9 file=/evidence/document_3.pdf status=success
+2026-05-17T20:30:14+00:00 - CLEAR_LOGS - user=user_unknown ip=45.83.10.9 file=/logs/activity.log status=attempt

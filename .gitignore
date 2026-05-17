@@ -1,0 +1,4 @@
+evidence/.minio.sys/
+backups/backup_*/
+logstash/data/
+*.tmp
